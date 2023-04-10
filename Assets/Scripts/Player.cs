@@ -6,38 +6,47 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public static int count_object = 0;
-    public TextMeshProUGUI count_destroy_objects;
-    private AudioSource sound;
-    private int count_sound = 0;
+    private Vector3 movement;
+    private float walkSpeed = 10.00f;
+    public Animator anim;
+    private Rigidbody rig;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-        sound = GetComponent<AudioSource>();
-
+        //sound = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
+        rig = GetComponent<Rigidbody>();
     }
-
     // Update is called once per frame
     void Update()
     {
-        count_destroy_objects.text = count_object.ToString();
-        if (count_object != count_sound)
-        {
-            sound.Play();
-            count_sound++;
-        }
+        
+        GetMovementInput();
 
     }
 
 
-    void OnCollisionEnter(Collision collision)
+    void GetMovementInput()
     {
-        if (collision.gameObject.CompareTag("Rocks"))
+
+        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        if (movement.magnitude > 0.1f)
         {
-            Debug.Log("Collision OnCollisionEnter: :" + collision.gameObject.name);
+            Quaternion rotation = Quaternion.LookRotation(movement);
+            rotation.x = 0;
+            rotation.y = 0;
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 5.0f);
         }
 
+        rig.velocity = movement * walkSpeed;
+
+        //movement = Vector3.ClampMagnitude(movement, 1.0f);
+
+
+        //Debug.Log(movement);
     }
+
 
 }
