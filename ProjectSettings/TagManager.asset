@@ -7,6 +7,10 @@ TagManager:
   - SkyboxCamera
   - Tools
   - Rocks
+  - Plastic
+  - Wood
+  - Metal
+  - Slider
   layers:
   - Default
   - TransparentFX

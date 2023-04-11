@@ -20,6 +20,7 @@ public class UI : MonoBehaviour
 
     public void LoadTuturialLevel()
     {
+
         SceneManager.LoadScene("Level0");
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }

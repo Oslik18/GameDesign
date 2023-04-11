@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Vector3 movement;
     private float walkSpeed = 10.00f;
@@ -21,7 +21,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (UI_Scenes.boom == 1)
+        {
+            anim.SetBool("walk", false);
+            anim.SetTrigger("attack01");
+            UI_Scenes.boom++;
+            Debug.Log(UI_Scenes.boom);
+        }
         GetMovementInput();
 
     }
@@ -32,13 +38,6 @@ public class Player : MonoBehaviour
 
         movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
 
-        if (movement.magnitude > 0.1f)
-        {
-            Quaternion rotation = Quaternion.LookRotation(movement);
-            rotation.x = 0;
-            rotation.y = 0;
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, 5.0f);
-        }
 
         rig.velocity = movement * walkSpeed;
 
