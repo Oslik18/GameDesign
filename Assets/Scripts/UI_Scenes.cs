@@ -22,24 +22,31 @@ public class UI_Scenes : MonoBehaviour
     private float timeCount;
     public static bool stopTimer;
     public static int boom = 0;
+    public GameObject panel;
+    public GameObject button_again;
+    public GameObject button_exit;
+    public GameObject button_next;
+    public GameObject button_spaceship;
 
     // Start is called before the first frame update
     void Start()
     {
+        panel.SetActive(false);
+        button_again.SetActive(false);
+        button_exit.SetActive(false);
+        button_next.SetActive(false);
+        button_spaceship.SetActive(false);
         Count_tools count_tools = new Count_tools();
         count_tools.LoadFile();
         metal_sources = Count_tools.metal_all_sources;
         wood_sources = Count_tools.wood_all_sources;
         other_sources = Count_tools.other_all_sources;
         rocks_sources = Count_tools.rocks_all_sources;
-
+        Time.timeScale = 1f;
         stopTimer = false;
-        //timeCount = minute * 60;
-        //timeSlider.maxValue = minute * 60;
-        //timeSlider.value = minute * 60;
-        timeCount = 5;
-        timeSlider.maxValue = 5;
-        timeSlider.value = 5;
+        timeCount = minute * 60;
+        timeSlider.maxValue = minute * 60;
+        timeSlider.value = minute * 60;
     }
 
     void Update()
@@ -50,18 +57,48 @@ public class UI_Scenes : MonoBehaviour
         text_wood.text = wood_sources.ToString();
         text_metal.text = metal_sources.ToString();
         text_rocks.text = rocks_sources.ToString();
+
+        if (PlayerMovement.player_destroy == 1)
+        {
+            Invoke("MenuAgain", 2f);
+        }
+        if (PlayerMovement.player_destroy == 2)
+        {
+            Invoke("MenuFinish", 0.8f);
+        }
     }
+
+    public void MenuFinish()
+    {
+        Time.timeScale = 0.0f;
+        panel.SetActive(true);
+        button_exit.SetActive(true);
+        button_next.SetActive(true);
+        button_spaceship.SetActive(true);
+        button_again.SetActive(false);
+    }
+
+    public void MenuAgain()
+    {
+        Time.timeScale = 0.0f;
+        panel.SetActive(true);
+        button_again.SetActive(true);
+        button_exit.SetActive(true);
+        button_next.SetActive(false);
+        button_spaceship.SetActive(false);
+    }
+
 
     public void LoadMenu()
     {
-        //if (stopTimer)
-        //{
-            Debug.Log("qqq");
+        
+        if (PlayerMovement.player_destroy == 2)
+        {
             Count_tools count_tools = new Count_tools();
             count_tools.WriteFile(other_sources, metal_sources, wood_sources, rocks_sources);
-            
-        //}
-        
+            panel.SetActive(false);
+        }
+
         SceneManager.LoadScene("Start");
     }
 
@@ -73,6 +110,8 @@ public class UI_Scenes : MonoBehaviour
 
     public void LoadNextLevel()
     {
+        Count_tools count_tools = new Count_tools();
+        count_tools.WriteFile(other_sources, metal_sources, wood_sources, rocks_sources);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -84,7 +123,7 @@ public class UI_Scenes : MonoBehaviour
         {
             stopTimer = true;
             boom++;
-            Debug.Log(boom);
+
         }
 
         if (!stopTimer)
@@ -98,5 +137,9 @@ public class UI_Scenes : MonoBehaviour
         
     }
 
+    public void LoadSpaceship()
+    {
+        
+    }
 
 }

@@ -6,46 +6,102 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Vector3 movement;
-    private float walkSpeed = 10.00f;
+    public static float walkSpeed = 40.00f;
     public Animator anim;
-    private Rigidbody rig;
-
+    private GameObject effect;
+    private GameObject effect_Gate;
+    public static int player_destroy;
+    private bool go;
+    private float rotatY = 0;
 
     void Start()
     {
-        //sound = GetComponent<AudioSource>();
+        player_destroy = 0;
         anim = GetComponent<Animator>();
-        rig = GetComponent<Rigidbody>();
+        anim.SetBool("walk", false);
+        effect = GameObject.Find("Star_A");
+        effect_Gate = GameObject.Find("Gateway_effect");
+        effect.SetActive(false);
+
     }
     // Update is called once per frame
     void Update()
     {
+
         if (UI_Scenes.boom == 1)
         {
+            Debug.Log(UI_Scenes.boom);
             anim.SetBool("walk", false);
             anim.SetTrigger("attack01");
             UI_Scenes.boom++;
-            Debug.Log(UI_Scenes.boom);
+            player_destroy = 1;
         }
+        
         GetMovementInput();
 
     }
 
+    
+
 
     void GetMovementInput()
     {
+ 
 
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        if (Input.GetMouseButtonDown(0) && UI_Scenes.boom != 1)
+        {
+            go = true;
+            anim.SetBool("walk", true);
+            
+        }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            go = false;
+            anim.SetBool("walk", false);
+        }
 
-        rig.velocity = movement * walkSpeed;
+        if (go && UI_Scenes.boom !=1)
+        {
+            transform.position += new Vector3(transform.forward.x, 0.0f, transform.forward.z) * Time.deltaTime * walkSpeed;
+            float delta = Input.GetAxis("Mouse X") * 10f;
+            rotatY = RestrictionAngle(transform.localEulerAngles.y + delta);
+            transform.localEulerAngles = new Vector3(0.0f, rotatY, 0.0f);
+        }
+    }
 
-        //movement = Vector3.ClampMagnitude(movement, 1.0f);
-
-
-        //Debug.Log(movement);
+    public float RestrictionAngle(float angle)
+    {
+        if (angle > 180)
+        {
+            angle -= 360;
+        }
+        else if (angle < -180)
+        {
+            angle += 360;
+        }
+        return angle;
     }
 
 
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Finish"))
+        {
+            Change_camera.camera_space = true;
+            effect_Gate.SetActive(false);
+            effect.SetActive(true);
+            player_destroy = 2;
+            Invoke("RobotDestroy", 0.1f);
+
+        }
+
+    }
+
+    public void RobotDestroy()
+    {
+        gameObject.SetActive(false);
+        
+    }
+    
 }

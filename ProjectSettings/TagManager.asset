@@ -11,6 +11,7 @@ TagManager:
   - Wood
   - Metal
   - Slider
+  - Effect
   layers:
   - Default
   - TransparentFX

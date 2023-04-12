@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Change_camera : MonoBehaviour
+{
+    public GameObject camera_robot;
+    public GameObject camera_spaceship;
+    public static bool camera_space;
+    // Start is called before the first frame update
+    void Start()
+    {
+        camera_space = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (camera_space)
+            {
+                camera_space = false;
+                camera_robot.active = true;
+                camera_spaceship.active = false;
+            }
+            else if (!camera_space)
+            {
+                camera_space = true;
+                camera_robot.active = false;
+                camera_spaceship.active = true;
+            }
+        }
+    }
+}
