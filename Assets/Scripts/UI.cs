@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.IO;
 
 public class UI : MonoBehaviour
 {
@@ -55,7 +56,10 @@ public class UI : MonoBehaviour
 
     public void QuitGame()
     {
-
+        StreamWriter writeFile = new StreamWriter("Resource.txt");
+        string str = "0,0,0,0";
+        writeFile.WriteLine(str);
+        writeFile.Close();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 }

@@ -47,6 +47,7 @@ public class UI_Scenes : MonoBehaviour
         timeCount = minute * 60;
         timeSlider.maxValue = minute * 60;
         timeSlider.value = minute * 60;
+        GameObject.Find("Background").GetComponent<Image>().color = new Color32(137, 81, 81, 255);
     }
 
     void Update()
@@ -60,7 +61,7 @@ public class UI_Scenes : MonoBehaviour
 
         if (PlayerMovement.player_destroy == 1)
         {
-            Invoke("MenuAgain", 2f);
+            Invoke("MenuAgain", 1.7f);
         }
         if (PlayerMovement.player_destroy == 2)
         {
@@ -68,7 +69,7 @@ public class UI_Scenes : MonoBehaviour
         }
     }
 
-    public void MenuFinish()
+    void MenuFinish()
     {
         Time.timeScale = 0.0f;
         panel.SetActive(true);
@@ -78,7 +79,7 @@ public class UI_Scenes : MonoBehaviour
         button_again.SetActive(false);
     }
 
-    public void MenuAgain()
+    void MenuAgain()
     {
         Time.timeScale = 0.0f;
         panel.SetActive(true);
@@ -118,7 +119,14 @@ public class UI_Scenes : MonoBehaviour
     void Timer()
     {
         timeCount -= Time.deltaTime;
+
+        if (timeCount <= 10)
+        {
+            GameObject.Find("Background").GetComponent<Image>().color = new Color32(224, 202, 69, 255);
+        }
+
         
+
         if (timeCount <= 0)
         {
             stopTimer = true;

@@ -10,6 +10,7 @@ public class Change_camera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        camera_robot.active = false;
         camera_space = true;
     }
 
@@ -21,15 +22,24 @@ public class Change_camera : MonoBehaviour
             if (camera_space)
             {
                 camera_space = false;
-                camera_robot.active = true;
-                camera_spaceship.active = false;
             }
             else if (!camera_space)
             {
                 camera_space = true;
-                camera_robot.active = false;
-                camera_spaceship.active = true;
             }
         }
+
+
+        if (camera_space)
+        {
+            camera_robot.active = false;
+            camera_spaceship.active = true;
+        }
+        else if (!camera_space)
+        {
+            camera_robot.active = true;
+            camera_spaceship.active = false;
+        }
+
     }
 }

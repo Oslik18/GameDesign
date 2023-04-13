@@ -30,14 +30,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (UI_Scenes.boom == 1)
         {
-            Debug.Log(UI_Scenes.boom);
             anim.SetBool("walk", false);
             anim.SetTrigger("attack01");
             UI_Scenes.boom++;
             player_destroy = 1;
         }
-        
-        GetMovementInput();
+
+        if (!Change_camera.camera_space)
+        {
+            GetMovementInput();
+        }
+            
 
     }
 
@@ -88,20 +91,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Finish"))
         {
-            Change_camera.camera_space = true;
+            
             effect_Gate.SetActive(false);
             effect.SetActive(true);
             player_destroy = 2;
-            Invoke("RobotDestroy", 0.1f);
+            gameObject.SetActive(false);
+
 
         }
 
     }
 
-    public void RobotDestroy()
-    {
-        gameObject.SetActive(false);
-        
-    }
-    
-}
+ }
