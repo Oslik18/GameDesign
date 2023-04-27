@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.IO;
 
 public class UI_Scenes : MonoBehaviour
 {
@@ -27,27 +28,27 @@ public class UI_Scenes : MonoBehaviour
     public GameObject button_exit;
     public GameObject button_next;
     public GameObject button_spaceship;
+    private GameObject resourceCount;
+    private ResourcesCount value;
 
     // Start is called before the first frame update
     void Start()
     {
+        resourceCount = GameObject.Find("ResourcesCount");
+        value = resourceCount.GetComponent<ResourcesCount>();
         panel.SetActive(false);
         button_again.SetActive(false);
         button_exit.SetActive(false);
         button_next.SetActive(false);
         button_spaceship.SetActive(false);
-        Count_tools count_tools = new Count_tools();
-        count_tools.LoadFile();
-        metal_sources = Count_tools.metal_all_sources;
-        wood_sources = Count_tools.wood_all_sources;
-        other_sources = Count_tools.other_all_sources;
-        rocks_sources = Count_tools.rocks_all_sources;
+        LoadSources();
         Time.timeScale = 1f;
         stopTimer = false;
         timeCount = minute * 60;
         timeSlider.maxValue = minute * 60;
         timeSlider.value = minute * 60;
         GameObject.Find("Background").GetComponent<Image>().color = new Color32(137, 81, 81, 255);
+        
     }
 
     void Update()
@@ -95,8 +96,10 @@ public class UI_Scenes : MonoBehaviour
         
         if (PlayerMovement.player_destroy == 2)
         {
-            Count_tools count_tools = new Count_tools();
-            count_tools.WriteFile(other_sources, metal_sources, wood_sources, rocks_sources);
+            value.other_all_sources = other_sources;
+            value.metal_all_sources = metal_sources;
+            value.wood_all_sources = wood_sources;
+            value.rocks_all_sources = rocks_sources;
             panel.SetActive(false);
         }
 
@@ -111,9 +114,12 @@ public class UI_Scenes : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        Count_tools count_tools = new Count_tools();
-        count_tools.WriteFile(other_sources, metal_sources, wood_sources, rocks_sources);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        value.other_all_sources = other_sources;
+        value.metal_all_sources = metal_sources;
+        value.wood_all_sources = wood_sources;
+        value.rocks_all_sources = rocks_sources;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Start");
     }
 
     void Timer()
@@ -148,6 +154,16 @@ public class UI_Scenes : MonoBehaviour
     public void LoadSpaceship()
     {
         
+    }
+
+    public void LoadSources()
+    {
+        other_sources = value.other_all_sources;
+        metal_sources = value.metal_all_sources;
+        wood_sources = value.wood_all_sources;
+        rocks_sources = value.rocks_all_sources;
+
+
     }
 
 }

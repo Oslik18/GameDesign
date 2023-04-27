@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpaceMovement : MonoBehaviour
 {
     private Vector3 movement;
-    private float movementSpeed = 20.00f;
-    private float rotationSpeed = 150.00f;
+    private float movementSpeed = 40.00f;
+    private float rotationSpeed = 80.00f;
 
     // Start is called before the first frame update
     void Start()
