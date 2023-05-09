@@ -50,7 +50,7 @@ public class UI : MonoBehaviour
     public void LoadLevel4()
     {
 
-        //SceneManager.LoadScene("Level4");
+        SceneManager.LoadScene("Level4");
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
