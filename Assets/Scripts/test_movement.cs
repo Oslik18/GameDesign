@@ -89,16 +89,16 @@ public class test_movement : MonoBehaviour
         }
 
        float verticalInput = Input.GetAxis("Vertical");
-Vector3 movement = Vector3.zero;
-if (verticalInput > 0) // Move forward if the vertical input is positive
-{
-    movement = transform.forward * verticalInput;
-}
-else if (verticalInput < 0) // Move backwards if the vertical input is negative
-{
-    movement = -transform.forward * Mathf.Abs(verticalInput);
-}
-transform.position += movement * Time.deltaTime * walkSpeed;
+        Vector3 movement = Vector3.zero;
+        if (verticalInput > 0) // Move forward if the vertical input is positive
+        {
+            movement = transform.forward * verticalInput;
+        }
+        else if (verticalInput < 0) // Move backwards if the vertical input is negative
+        {
+            movement = -transform.forward * Mathf.Abs(verticalInput);
+        }
+        transform.position += movement * Time.deltaTime * walkSpeed;
     }
 
     public float RestrictionAngle(float angle)
