@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        timeSliderMain = GameObject.Find("Time Bar").GetComponent<Slider>();
+        //timeSliderMain = GameObject.Find("Time Bar").GetComponent<Slider>();
         player_destroy = 0;
         effectSmall = GameObject.Find("SmallFire");
         effectBoom = GameObject.Find("Boom");
@@ -56,10 +56,10 @@ public class PlayerMovement : MonoBehaviour
 
     void GetMovementInput()
     {
-        if (timeSliderMain.value < 11)
-        {
-            effectSmall.SetActive(true);
-        }
+        //if (timeSliderMain.value < 11)
+        //{
+        //    effectSmall.SetActive(true);
+        //}
 
         if (Input.GetMouseButtonDown(0) && UI_Scenes.boom != 1)
         {
