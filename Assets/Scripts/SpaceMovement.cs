@@ -26,13 +26,13 @@ public class SpaceMovement : MonoBehaviour
 
     void GetMovementInput()
     {
-        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        transform.Translate(movement * Time.deltaTime * movementSpeed, Space.World);
+        float forwardInput = Input.GetAxis("Vertical");
+        float turnInput = Input.GetAxis("Horizontal");
 
-        if (movement != Vector3.zero)
-        {
-            Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-        }
+        // Move the Rover forward or backward
+        transform.Translate(Vector3.forward * forwardInput * movementSpeed * Time.deltaTime);
+
+        // Turn the Rover left or right
+        transform.Rotate(Vector3.up, turnInput * rotationSpeed * Time.deltaTime);
     }
 }
