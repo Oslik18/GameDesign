@@ -14,6 +14,6 @@ https://sketchfab.com/3d-models/turtle-rover-dc5cae6959ea4b76875fd52115d69303
 https://assetstore.unity.com/packages/3d/environments/free-stylized-nature-environment-96371
 https://assetstore.unity.com/packages/2d/textures-materials/brick/high-quality-bricks-walls-49581#content
 https://assetstore.unity.com/packages/3d/environments/dynamic-snow-system-for-unity-78148
-
 https://assetstore.unity.com/packages/3d/vegetation/nature-pack-low-poly-trees-bushes-210184
+https://assetstore.unity.com/packages/3d/characters/creatures/kawaii-slimes-221172
 

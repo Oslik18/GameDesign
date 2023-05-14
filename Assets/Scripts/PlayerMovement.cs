@@ -25,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
         effectBoom = GameObject.Find("Boom");
         effectGate = GameObject.Find("Star_A");
         effectPortal = GameObject.Find("Gateway_effect");
+        Debug.Log(effectSmall.name);
+        Debug.Log(effectBoom.name);
+        Debug.Log(effectGate.name);
+        Debug.Log(effectPortal.name);
+
         effectGate.SetActive(false);
         effectSmall.SetActive(false);
         effectBoom.SetActive(false);
@@ -33,10 +38,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Change_camera.camera_space)
-        {
+        
             GetMovementInput();
-        }
 
         if (UI_Scenes.sources == 0 )
         {
@@ -55,10 +58,10 @@ public class PlayerMovement : MonoBehaviour
 
     void GetMovementInput()
     {
-        //if (timeSliderMain.value < 11)
-        //{
-        //    effectSmall.SetActive(true);
-        //}
+        if (timeSliderMain.value < 11)
+        {
+            effectSmall.SetActive(true);
+        }
 
         if (UI_Scenes.boom != 1)
         {
