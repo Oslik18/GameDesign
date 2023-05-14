@@ -5301,12 +5301,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 805453901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da417817487f10f47977c84bb1471af9, type: 3}
+  m_Script: {fileID: 11500000, guid: a74d6b22a9324094596ae50659f1e4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 646240599}
-  distance: 45
-  height: 40
+  distance: 55
+  height: 50
   damping: 2
   rotationSpeed: 100
 --- !u!81 &805453903

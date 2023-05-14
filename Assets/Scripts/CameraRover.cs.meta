@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/RoverController.cs.meta
-guid: e14de98e9eb0dcd4bb394659f6bdfe00
-========
-guid: a06d05fa684d9dd47b5a9b50be54022a
->>>>>>>> last_week:Assets/Scripts/Collider_wall.cs.meta
+guid: a74d6b22a9324094596ae50659f1e4c7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

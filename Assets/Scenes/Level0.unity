@@ -1420,7 +1420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a974e3bc212a4b44b2daeed57d9be38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hints: {fileID: 0}
 --- !u!1 &650896505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 193742, guid: 9c74caa742791864f9c678287121e6c9, type: 3}
@@ -3450,7 +3449,6 @@ GameObject:
   - component: {fileID: 1748682781}
   - component: {fileID: 1748682780}
   - component: {fileID: 1748682783}
-  - component: {fileID: 1748682784}
   m_Layer: 0
   m_Name: RoverCamera
   m_TagString: Untagged
@@ -3531,24 +3529,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748682778}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a0534506986b6241a8501e65e5aabed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1748682784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748682778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da417817487f10f47977c84bb1471af9, type: 3}
+  m_Script: {fileID: 11500000, guid: a74d6b22a9324094596ae50659f1e4c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 543450653531690435}
+  target: {fileID: 543450653531690443}
   distance: 55
   height: 50
   damping: 2
@@ -4562,11 +4548,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4310090, guid: ec78ebca7517fb745a45a931cb06d2bd, type: 3}
---- !u!4 &543450653531690435 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4975627290130565779, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
-  m_PrefabInstance: {fileID: 4793593439756033872}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &543450653531690440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4581,6 +4562,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   turnSpeed: 100
+--- !u!4 &543450653531690443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4975627290130565779, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+  m_PrefabInstance: {fileID: 4793593439756033872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4282708308803269747
 PrefabInstance:
   m_ObjectHideFlags: 0

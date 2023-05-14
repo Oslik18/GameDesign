@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Hints : MonoBehaviour
 {
-    public TextMeshProUGUI hints;
     private Text text_timer, text_source, text_drone, text_portal, text_number;
     private float timer = 0f;
     private float sec;

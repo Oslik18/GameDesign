@@ -29,21 +29,21 @@ public class UI : MonoBehaviour
     public void LoadLevel1()
     {
 
-        //SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1");
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void LoadLevel2()
     {
 
-        //SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level2");
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void LoadLevel3()
     {
 
-        //SceneManager.LoadScene("Level3");
+        SceneManager.LoadScene("Level3");
         //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

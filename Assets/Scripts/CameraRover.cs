@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonCamera : MonoBehaviour
-
+public class CameraRover : MonoBehaviour
 {
     public Transform target; // The object that the camera will follow
     public float distance = 10.0f; // Distance from the target
@@ -12,11 +11,10 @@ public class ThirdPersonCamera : MonoBehaviour
     public float rotationSpeed = 100.0f; // Speed of camera rotation
 
     private float mouseX, mouseY;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -38,6 +36,5 @@ public class ThirdPersonCamera : MonoBehaviour
 
         // Make the camera look at the target
         transform.LookAt(target);
-        
     }
 }
