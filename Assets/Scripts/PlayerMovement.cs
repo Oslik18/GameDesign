@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         
             GetMovementInput();
 
-        if (UI_Scenes.sources == 0 )
+        if (UI_Scenes.sources < 1 )
         {
             effectPortal.SetActive(true);
         }
