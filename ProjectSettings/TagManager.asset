@@ -8,10 +8,10 @@ TagManager:
   - Tools
   - Rocks
   - Plastic
-  - Wood
   - Metal
   - Slider
   - Effect
+  - Wood
   layers:
   - Default
   - TransparentFX

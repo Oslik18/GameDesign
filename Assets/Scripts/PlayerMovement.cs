@@ -6,17 +6,16 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //public Animator anim;
+    public float speed = 10f; // adjust this value to control the Rover's speed
+    public float turnSpeed = 100f; // adjust this value to control the Rover's turning speed
     private GameObject effectSmall;
     private GameObject effectBoom;
     private GameObject effectGate;
+    private GameObject effectPortal;
     private Slider timeSliderMain;
     public static int player_destroy;
     private bool go;
-    private float rotatY = 0f;
     public static float walkSpeed = 40f;
-    
-    private float xMin = 20f, xMax = 980f, zMin = 20f, zMax = 980f, yMin = 2;
 
     void Start()
     {
@@ -25,14 +24,28 @@ public class PlayerMovement : MonoBehaviour
         effectSmall = GameObject.Find("SmallFire");
         effectBoom = GameObject.Find("Boom");
         effectGate = GameObject.Find("Star_A");
+        effectPortal = GameObject.Find("Gateway_effect");
+        
+        Debug.Log(effectSmall.name);
+        Debug.Log(effectBoom.name);
+        Debug.Log(effectGate.name);
+        Debug.Log(effectPortal.name);
+
         effectGate.SetActive(false);
         effectSmall.SetActive(false);
         effectBoom.SetActive(false);
-
+        effectPortal.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
+        
+            GetMovementInput();
+
+        if (UI_Scenes.sources == 0 )
+        {
+            effectPortal.SetActive(true);
+        }
 
         if (UI_Scenes.boom == 1)
         {
@@ -41,18 +54,8 @@ public class PlayerMovement : MonoBehaviour
             
             UI_Scenes.boom++;
             player_destroy = 1;
-
         }
     }
-
-    private void FixedUpdate()
-    {
-        if (!Change_camera.camera_space)
-        {
-            GetMovementInput();
-        }
-    }
-
 
     void GetMovementInput()
     {
@@ -61,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
             effectSmall.SetActive(true);
         }
 
-        if (Input.GetMouseButtonDown(0) && UI_Scenes.boom != 1)
+        if (UI_Scenes.boom != 1)
         {
             go = true;
         }
@@ -73,33 +76,47 @@ public class PlayerMovement : MonoBehaviour
 
         if (go && UI_Scenes.boom != 1)
         {
-            transform.position += new Vector3(transform.forward.x, 0.0f, transform.forward.z) * Time.deltaTime * walkSpeed;
-            float delta = Input.GetAxis("Mouse X") * 5f;
-            rotatY = RestrictionAngle(transform.localEulerAngles.y + delta);
-            transform.localEulerAngles = new Vector3(0.0f, rotatY, 0.0f);
+            // Handle keyboard input for movement and turning
+            float forwardInput = Input.GetAxis("Vertical");
+            float turnInput = Input.GetAxis("Horizontal");
+
+            // Move the Rover forward or backward
+            transform.Translate(Vector3.forward * forwardInput * speed * Time.deltaTime);
+
+            // Turn the Rover left or right
+            transform.Rotate(Vector3.up, turnInput * turnSpeed * Time.deltaTime);
         }
     }
-
-    public float RestrictionAngle(float angle)
-    {
-        if (angle > 180)
-        {
-            angle -= 360;
-        }
-        else if (angle < -180)
-        {
-            angle += 360;
-        }
-        return angle;
-    }
-
-
-
 
 
     void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Finish"))
+        if (collision.gameObject.CompareTag("Metal"))
+        {
+            UI_Scenes.sources--;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Wood"))
+        {
+            UI_Scenes.sources--;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Rocks"))
+        {
+            UI_Scenes.sources--;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Tools"))
+        {
+            UI_Scenes.sources--;
+            Destroy(collision.gameObject);
+        }
+
+
+        if (collision.gameObject.CompareTag("Finish") && UI_Scenes.sources == 0)
         {
             effectGate.SetActive(true);
             player_destroy = 2;
@@ -112,5 +129,7 @@ public class PlayerMovement : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+
 
 }
