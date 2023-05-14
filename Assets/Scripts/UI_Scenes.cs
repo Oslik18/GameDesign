@@ -44,7 +44,11 @@ public class UI_Scenes : MonoBehaviour
     {
         Timer();
 
-        sourcesNumberUI.text = sources.ToString();
+        if (sources >= 0 )
+        {
+            sourcesNumberUI.text = sources.ToString();
+        }
+        
 
         if (PlayerMovement.player_destroy == 1)
         {
