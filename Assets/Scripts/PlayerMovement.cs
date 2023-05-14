@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (collision.gameObject.CompareTag("Finish") && UI_Scenes.sources == 0)
+        if (collision.gameObject.CompareTag("Finish") && UI_Scenes.sources < 1)
         {
             effectGate.SetActive(true);
             player_destroy = 2;
