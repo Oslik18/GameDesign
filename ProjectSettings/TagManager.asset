@@ -12,6 +12,7 @@ TagManager:
   - Slider
   - Effect
   - Wood
+  - points
   layers:
   - Default
   - TransparentFX
