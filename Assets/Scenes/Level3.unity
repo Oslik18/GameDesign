@@ -859,15 +859,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6419571282847671862, guid: 45014561cc0342f784c4fef56a59a802, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6419571282847671862, guid: 45014561cc0342f784c4fef56a59a802, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6419571282847671862, guid: 45014561cc0342f784c4fef56a59a802, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6419571282847671862, guid: 45014561cc0342f784c4fef56a59a802, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1232,7 +1232,7 @@ BoxCollider:
   m_GameObject: {fileID: 121252222}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -4651,7 +4651,7 @@ BoxCollider:
   m_GameObject: {fileID: 725279496}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5122,7 +5122,7 @@ BoxCollider:
   m_GameObject: {fileID: 781853431}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5219,7 +5219,7 @@ BoxCollider:
   m_GameObject: {fileID: 787490903}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5772,15 +5772,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8014559447764537871, guid: db8fcf02673c4acf9b702d986020fd37, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8014559447764537871, guid: db8fcf02673c4acf9b702d986020fd37, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8014559447764537871, guid: db8fcf02673c4acf9b702d986020fd37, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8014559447764537871, guid: db8fcf02673c4acf9b702d986020fd37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5936,7 +5936,7 @@ BoxCollider:
   m_GameObject: {fileID: 864471353}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -7875,15 +7875,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7672605836087094303, guid: 859216e5106642e793a252db8bfe4d77, type: 3}
       propertyPath: m_LocalScale.x
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7672605836087094303, guid: 859216e5106642e793a252db8bfe4d77, type: 3}
       propertyPath: m_LocalScale.y
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7672605836087094303, guid: 859216e5106642e793a252db8bfe4d77, type: 3}
       propertyPath: m_LocalScale.z
-      value: 13
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7672605836087094303, guid: 859216e5106642e793a252db8bfe4d77, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9132,7 +9132,7 @@ BoxCollider:
   m_GameObject: {fileID: 1380234895}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11507,7 +11507,7 @@ BoxCollider:
   m_GameObject: {fileID: 1775938497}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -11685,6 +11685,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Size.x
+      value: 27.588545
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Size.y
+      value: 6.7758474
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Size.z
+      value: 39.064064
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Center.x
+      value: -0.25285253
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Center.y
+      value: 5.959818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793593438688127221, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
+      propertyPath: m_Center.z
+      value: -5.2838635
+      objectReference: {fileID: 0}
     - target: {fileID: 4975627290130565779, guid: 1caf0a0800d119f4ba10011de0971136, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12463,7 +12487,7 @@ BoxCollider:
   m_GameObject: {fileID: 1950637037}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -12703,7 +12727,7 @@ BoxCollider:
   m_GameObject: {fileID: 2017297751}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -13464,7 +13488,7 @@ BoxCollider:
   m_GameObject: {fileID: 2103025152}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

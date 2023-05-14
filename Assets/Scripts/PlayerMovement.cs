@@ -25,11 +25,6 @@ public class PlayerMovement : MonoBehaviour
         effectBoom = GameObject.Find("Boom");
         effectGate = GameObject.Find("Star_A");
         effectPortal = GameObject.Find("Gateway_effect");
-        Debug.Log(effectSmall.name);
-        Debug.Log(effectBoom.name);
-        Debug.Log(effectGate.name);
-        Debug.Log(effectPortal.name);
-
         effectGate.SetActive(false);
         effectSmall.SetActive(false);
         effectBoom.SetActive(false);
@@ -41,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
         
             GetMovementInput();
 
-        if (UI_Scenes.sources == 0 )
+        if (UI_Scenes.sources < 1 )
         {
             effectPortal.SetActive(true);
         }
@@ -115,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (collision.gameObject.CompareTag("Finish") && UI_Scenes.sources == 0)
+        if (collision.gameObject.CompareTag("Finish") && UI_Scenes.sources < 1)
         {
             effectGate.SetActive(true);
             player_destroy = 2;
