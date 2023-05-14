@@ -25,12 +25,6 @@ public class PlayerMovement : MonoBehaviour
         effectBoom = GameObject.Find("Boom");
         effectGate = GameObject.Find("Star_A");
         effectPortal = GameObject.Find("Gateway_effect");
-        
-        Debug.Log(effectSmall.name);
-        Debug.Log(effectBoom.name);
-        Debug.Log(effectGate.name);
-        Debug.Log(effectPortal.name);
-
         effectGate.SetActive(false);
         effectSmall.SetActive(false);
         effectBoom.SetActive(false);

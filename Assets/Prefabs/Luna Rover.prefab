@@ -20979,8 +20979,6 @@ GameObject:
   - component: {fileID: 4975627290130565779}
   - component: {fileID: 4793593438688127219}
   - component: {fileID: 4793593438688127221}
-  - component: {fileID: 4793593438688127218}
-  - component: {fileID: 5640523255246262314}
   m_Layer: 0
   m_Name: Luna Rover
   m_TagString: Untagged
@@ -21035,30 +21033,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 16.578007, y: 6.9579725, z: 35.014595}
   m_Center: {x: 0.09935103, y: 3.258072, z: -7.308618}
---- !u!114 &4793593438688127218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5640523255246262313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e8f05b39435d2942ab11c0fd61a3100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5640523255246262314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5640523255246262313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb7bd3a92342ba446bcad2b3919d9744, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5646784826981692839
 GameObject:
   m_ObjectHideFlags: 0
