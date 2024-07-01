@@ -8,14 +8,13 @@
 Ideas: [Olga Darmoroz](https://github.com/Oslik18), [Lewwanduuwe Dharmasena (Ruvini)](https://github.com/RuviniDharmasena), [Yesen Liao](https://github.com/ButterfishYL), [Shaheer Jilanee](https://github.com/Shaheer-Jilanee)
 
 - Code for [Camera for rover](https://github.com/Oslik18/GameDesign/blob/Assessment3/Assets/Scripts/CameraRover.cs): [Shaheer Jilanee](https://github.com/Shaheer-Jilanee)
-- Code for movement rover for tutorial, 3 and 4 levels: [Olga Darmoroz](https://github.com/Oslik18)
-- Code for UI, collecting resources, teleportation, VFX: [Olga Darmoroz](https://github.com/Oslik18)
+- Other code except rover movement in level 2: [Olga Darmoroz](https://github.com/Oslik18)
 - Design Tutorial level: [Olga Darmoroz](https://github.com/Oslik18)
 - Design and rover movement script Level 2 (Forest planet): [Yesen Liao](https://github.com/ButterfishYL)
 - Design Level 3 (4 seasons planet): [Olga Darmoroz](https://github.com/Oslik18)
 - Design Level 4 (Crab Monster planet): [Lewwanduuwe Dharmasena (Ruvini)](https://github.com/RuviniDharmasena)
 - Design UI and connecting it for all levels: [Olga Darmoroz](https://github.com/Oslik18)
-- Building a game and resolving merge conflicts: [Olga Darmoroz](https://github.com/Oslik18)
+- Building a game and resolving merge conflicts (tutorial, 2, 3 and 4 levels): [Olga Darmoroz](https://github.com/Oslik18)
 
 ## Link
 - Working repository with tutorial, 3 and 4 levels, and UI [Assessment3](https://github.com/Oslik18/GameDesign/tree/Assessment3)
