@@ -8,7 +8,7 @@
 Ideas: [Olga Darmoroz](https://github.com/Oslik18), [Lewwanduuwe Dharmasena (Ruvini)](https://github.com/RuviniDharmasena), [Yesen Liao](https://github.com/ButterfishYL), [Shaheer Jilanee](https://github.com/Shaheer-Jilanee)
 
 - Code for [Camera for rover](https://github.com/Oslik18/GameDesign/blob/Assessment3/Assets/Scripts/CameraRover.cs): [Shaheer Jilanee](https://github.com/Shaheer-Jilanee)
-- Other code except rover movement in level 2: [Olga Darmoroz](https://github.com/Oslik18)
+- Other [code](https://github.com/Oslik18/GameDesign/tree/Assessment3/Assets/Scripts) except rover movement in level 2: [Olga Darmoroz](https://github.com/Oslik18)
 - Design Tutorial level: [Olga Darmoroz](https://github.com/Oslik18)
 - Design and rover movement script Level 2 (Forest planet): [Yesen Liao](https://github.com/ButterfishYL)
 - Design Level 3 (4 seasons planet): [Olga Darmoroz](https://github.com/Oslik18)
